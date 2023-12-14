@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text.html" charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<link rel="stylesheet" href="style.css" />-->
+		
+        <title>test</title>
+		
+		<style>
+			img {
+				opacity: 1;
+				transition: opacity 2s;
+			}
+
+			.imgDiv {
+				position: relative;
+			}
+			.testImg1 {
+				position: absolute;
+			}
+
+			.testImg2 {
+				position: absolute;
+			}
+
+			.in {
+				opacity: 1;
+			}
+
+			.out {
+				opacity: 0;
+			}
+		</style>
+    </head>
+	<body>
+		<div class="btnDiv">
+			<button class="upBtn">
+				<span>800 Up</span>
+			</button>
+
+			<button class="downBtn">
+				<span>800 Down</span>
+			</button>
+		</div>
+		
+		<div class="imgDiv">
+			<img class="testImg1" id="img12" src="12.gif">
+			<img class="testImg2" id="img34" src="34.gif">
+		</div>
+		
+		<script>
+			const imgValue1 = "12.gif";
+			const imgValue2 = "34.gif";
+			
+			let img12 = document.querySelector('#img12');
+			let img34 = document.querySelector('#img34');
+			let upBtn = document.querySelector('.upBtn');
+			let downBtn = document.querySelector('.downBtn');
+			
+			//12
+			upBtn.addEventListener('click', ()=> {
+				img34.classList.remove('out');
+				img12.classList.remove('out');
+				img34.src = "34.gif";
+				img12.src = "12.gif";
+				img12.classList.add('out');
+			});
+			
+			//34
+			downBtn.addEventListener('click', ()=> {
+				img12.classList.remove('out');
+				img34.classList.remove('out');
+				img12.src = "12.gif";
+				img34.src = "34.gif";
+				img34.classList.add('out');
+			});
+		</script>
+	</body>
+</html>
